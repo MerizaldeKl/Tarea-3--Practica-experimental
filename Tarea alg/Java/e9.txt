@@ -1,39 +1,18 @@
-function Contar() {
-let texto = prompt("Ingrese un texto:");
-let caracter = prompt("Ingrese el carácter que desea contar:");
-if(!texto || !caracter) {
-    alert(`No ingresaste texto o caracter`);
-    return;
-}
+function invertirTexto(texto) {
+    let resultado = [];
 
-let contador = 0;
-
-for (let i = 0; i < texto.length; i++) {
-    if (texto[i].toLowerCase() === caracter.toLowerCase()) {
-        contador++;
+    for (let i = texto.length - 1; i >= 0; i--) {
+        resultado.push(texto[i]);  
     }
+
+    let invertido = "";
+
+    for (let j = 0; j < resultado.length; j++) {
+        invertido = invertido + resultado[j];
+    }
+
+    return invertido;
 }
 
-alert(`La letra '${caracter}' aparece ${contador} veces.`);
-}
-Contar()
-//Algoritmo Contar_Caracter
-//    Definir texto, caracter Como Cadena
-//    Definir contador, i Como Entero
-
- //   Escribir "Ingrese un texto:"
-//    Leer texto
-//    Escribir "Ingrese el carácter a contar:"
-//    Leer caracter
-
- //   contador ← 0
-
-//    Para i ← 1 Hasta Longitud(texto) Hacer
-        
-//        Si Minusculas(Subcadena(texto, i, 1)) = Minusculas(caracter) Entonces
-//            contador ← contador + 1
- //       FinSi
-//    FinPara
-
-//    Escribir "La letra '", caracter, "' aparece ", contador, " veces."
-//FinAlgoritmo
+let texto = "Hola";
+console.log("Invertido: " + invertirTexto(texto));
