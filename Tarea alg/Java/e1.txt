@@ -1,22 +1,22 @@
-function Contar() {
-    let palabra = prompt("Ingrese la palabra");
-    let cantidad = 0;
-    if(palabra) {
-        cantidad = palabra.length;
-    alert(`La palabra tiene ${cantidad} caracteres`);
-    } else {
-        alert(`No ingreso palabras`)
-    }
-}
-Contar()
-//Inicio
-//    Mostrar "Ingrese la palabra"
-//    Leer palabra
+function contarPalabras(texto) {
+    let palabras = 0;
+    let dentroDePalabra = false;
 
-//    Si palabra no está vacía Entonces
-//       cantidad ← longitud(palabra)
-//        Mostrar "La palabra tiene", cantidad, "caracteres."
-//    Sino
-//        Mostrar "No ingresó ninguna palabra."
-//    FinSi
-//Fin
+    for (let i = 0; i < texto.length; i++) {
+        let c = texto[i];
+
+        if (c !== " " && c !== "\n") {
+            if (dentroDePalabra === false) {
+                palabras++;
+                dentroDePalabra = true;
+            }
+        } else {
+            dentroDePalabra = false;
+        }
+    }
+
+    return palabras;
+}
+
+let texto = "Hola mundo desde Quito";
+console.log("Número de palabras:", contarPalabras(texto));
