@@ -1,23 +1,32 @@
-function Contar() {
-let texto = prompt("Ingrese un texto:");
-  let textoInvertido = "";
+function contarVocales(texto) {
+    let listaVocales = [];
 
-  for (let i = texto.length - 1; i >= 0; i--) {
-    textoInvertido += texto[i];
-  }
+    listaVocales.push("a");
+    listaVocales.push("e");
+    listaVocales.push("i");
+    listaVocales.push("o");
+    listaVocales.push("u");
 
-  alert(`El texto invertido es: ${textoInvertido.toLowerCase()}`);
+    listaVocales.push("A");
+    listaVocales.push("E");
+    listaVocales.push("I");
+    listaVocales.push("O");
+    listaVocales.push("U");
+
+    let contador = 0;
+
+    for (let i = 0; i < texto.length; i++) {
+        let c = texto[i];
+
+        for (let j = 0; j < listaVocales.length; j++) {
+            if (c === listaVocales[j]) {
+                contador++;
+            }
+        }
+    }
+
+    return contador;
 }
-Contar()
-//Inicio
- //   Mostrar "Ingrese un texto:"
-//    Leer texto
 
-//    textoInvertido ← ""  
-
-//    Para i desde longitud(texto) - 1 hasta 0 hacer
-//        textoInvertido ← textoInvertido + texto[i]  
-//    FinPara
-
-//    Mostrar "El texto invertido es: ", textoInvertido
-//Fin
+let texto = "Educación";
+console.log("Cantidad de vocales:", contarVocales(texto));
