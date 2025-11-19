@@ -1,44 +1,12 @@
-function Contar() {
-let oracion = prompt("Ingrese una oración:");
-let palabra = "";
+function contarCaracteres(texto) {
+    let contador = 0;
 
-for (let i = 0; i < oracion.length; i++) {
-    let caracter = oracion[i];
-    
-    if (caracter !== " ") {
-        palabra += caracter; 
-    } else {
-        alert(palabra); 
-        palabra = ""; 
+    for (let i = 0; i < texto.length; i++) {
+        contador++; 
     }
+
+    return contador;
 }
 
-if (palabra !== "") {
-    alert(palabra);
-}
-}
-Contar()
-//Algoritmo Dividir_Oracion_Basico
-//    Definir oracion, palabra Como Cadena
- //   Definir i Como Entero
-
- //   Escribir "Ingrese una oración:"
- //   Leer oracion
-
-//    palabra ← ""  
-
-//    Para i ← 1 Hasta Longitud(oracion) Hacer
- //       caracter ← Subcadena(oracion, i, 1)
-        
- //       Si caracter ≠ " " Entonces
-//            palabra ← palabra + caracter
- //       Sino
- //           Escribir palabra
- //           palabra ← "" 
- //       FinSi
- //   FinPara
-    
- //   Si palabra ≠ "" Entonces
- //       Escribir palabra
- //   FinSi
-//FinAlgoritmo
+let texto = "Hola 123!";
+console.log("Total de caracteres: " + contarCaracteres(texto));
