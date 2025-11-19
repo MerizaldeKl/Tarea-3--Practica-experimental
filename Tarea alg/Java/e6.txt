@@ -1,45 +1,25 @@
-function Contar() {
-  let texto = prompt("Ingrese un texto:");
-  let letra = prompt("Ingrese una letra");
-  if (!texto || !letra) {
-    alert("No ingresaste un texto o letra.");
-    return;
-  }
+function contarPalabrasMayuscula(texto) {
+    let contador = 0;
+    let dentroDePalabra = false;
 
-  let textoModificado = "";
+    for (let i = 0; i < texto.length; i++) {
+        let c = texto[i];
 
-  for (let i = 0; i < texto.length; i++) {
-    if (texto[i].toLowerCase() === letra.toLowerCase()) {
-      textoModificado += "#";
-    } else {
-      textoModificado += texto[i];
+        if (c !== " " && c !== "\n") {
+            if (dentroDePalabra === false) {
+                if (c >= "A" && c <= "Z") {
+                    contador++;
+                }
+
+                dentroDePalabra = true; 
+            }
+        } else {
+            dentroDePalabra = false;
+        }
     }
-  }
 
-  alert(`El texto modificado es: ${textoModificado}`);
+    return contador;
 }
-Contar()
-//Inicio
- //   Mostrar "Ingrese un texto:"
-//    Leer texto
 
- //   Mostrar "Ingrese una letra a reemplazar:"
- //   Leer letra
-
- //   Si texto está vacío O letra está vacío Entonces
- //       Mostrar "No ingresaste un texto o letra."
-//        Fin
-//    FinSi
-
-//    textoModificado ← ""  
-
-//    Para i desde 0 hasta longitud(texto) - 1 Hacer
- //       Si convertir_a_minuscula(texto[i]) = convertir_a_minuscula(letra) Entonces
-//            textoModificado ← textoModificado + "#"
- //       Sino
- //           textoModificado ← textoModificado + texto[i]
- //       FinSi
-//    FinPara
-
- //   Mostrar "El texto modificado es: ", textoModificado
-//Fin
+let texto = "Hola mundo Bonito";
+console.log("Palabras con mayúscula inicial:", contarPalabrasMayuscula(texto));
