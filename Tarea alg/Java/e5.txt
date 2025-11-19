@@ -1,38 +1,31 @@
-function Contar() {
-  let nombre = prompt("Ingrese su nombre completo:");
-  if (!nombre) {
-    alert("No ingresaste un nombre.");
-    return;
-  }
+function contarDigitos(texto) {
+    let digitos = [];
 
-  let iniciales = "";  
-  
-  for (let i = 0; i < nombre.length; i++) {
-  
-    if (i === 0 || nombre[i - 1] === " ") {
-      iniciales += nombre[i].toUpperCase() + ".";
+    digitos.push("0");
+    digitos.push("1");
+    digitos.push("2");
+    digitos.push("3");
+    digitos.push("4");
+    digitos.push("5");
+    digitos.push("6");
+    digitos.push("7");
+    digitos.push("8");
+    digitos.push("9");
+
+    let contador = 0;
+
+    for (let i = 0; i < texto.length; i++) {
+        let c = texto[i];
+
+        for (let j = 0; j < digitos.length; j++) {
+            if (c === digitos[j]) {
+                contador++;
+            }
+        }
     }
-  }
 
-  alert(`Las iniciales son: ${iniciales}`);
+    return contador;
 }
-Contar()
-//Inicio
- //   Mostrar "Ingrese su nombre completo:"
- //   Leer nombre
 
- //   Si nombre está vacío Entonces
- //       Mostrar "No ingresaste un nombre."
- //       Fin
- //   FinSi
-
- //   iniciales ← ""  
-
- //   Para i desde 0 hasta longitud(nombre) - 1 Hacer
-//        Si i = 0 O nombre[i - 1] = " " Entonces
-//            iniciales ← iniciales + convertir_a_mayuscula(nombre[i]) + "."
-//        FinSi
-//    FinPara
-
- //   Mostrar "Las iniciales son: ", iniciales
-//Fin
+let texto = "Mi clave es 1234";
+console.log("Cantidad de dígitos:", contarDigitos(texto));
