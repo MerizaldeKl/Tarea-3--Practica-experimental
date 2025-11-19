@@ -1,33 +1,63 @@
-function Contar() {
-let numeros = [3, 5];
+A
+function agregarAlInicio(texto, fragmento) {
+    let resultado = "";
 
-for (let i = 0; i < numeros.length; i++) {
-    let num = numeros[i];
-    let factorial = 1;
-
-    for (let n = 1; n <= num; n++) {
-        factorial *= n; 
-        
+    for (let i = 0; i < fragmento.length; i++) {
+        resultado = resultado + fragmento[i];
     }
 
-    alert(`${num}! = ${factorial}`);
+    resultado = resultado + " ";
+
+    for (let i = 0; i < texto.length; i++) {
+        resultado = resultado + texto[i];
+    }
+
+    return resultado;
 }
+
+function agregarAlFinal(texto, fragmento) {
+    let resultado = "";
+
+    for (let i = 0; i < texto.length; i++) {
+        resultado = resultado + texto[i];
+    }
+
+    resultado = resultado + " ";
+
+    for (let i = 0; i < fragmento.length; i++) {
+        resultado = resultado + fragmento[i];
+    }
+
+    return resultado;
 }
-Contar()
-//Algoritmo Factorial_Arreglo
-//    Definir numeros Como Arreglo de Entero
-//    Definir i, n, num, factorial Como Entero
+B
+function agregarTexto(texto, fragmento) {
+    let alInicio = "";
+    let alFinal = "";
 
-//    numeros ← [3, 5]
 
-//    Para i ← 1 Hasta Longitud(numeros) Hacer
-//         num ← numeros[i]
-//        factorial ← 1
+    for (let i = 0; i < fragmento.length; i++) {
+        alInicio = alInicio + fragmento[i];
+    }
+    alInicio = alInicio + " ";
+    for (let i = 0; i < texto.length; i++) {
+        alInicio = alInicio + texto[i];
+    }
 
-//        Para n ← 1 Hasta num Hacer
-//            factorial ← factorial * n
-//        FinPara
+    for (let i = 0; i < texto.length; i++) {
+        alFinal = alFinal + texto[i];
+    }
+    alFinal = alFinal + " ";
+    for (let i = 0; i < fragmento.length; i++) {
+        alFinal = alFinal + fragmento[i];
+    }
 
- //       Escribir num, "! = ", factorial
- //   FinPara
-//FinAlgoritmo
+    return {
+        inicio: alInicio,
+        final: alFinal
+    };
+}
+
+let res = agregarTexto("Aprender programación", "Hoy");
+console.log("Al inicio:", res.inicio);
+console.log("Al final:", res.final);
