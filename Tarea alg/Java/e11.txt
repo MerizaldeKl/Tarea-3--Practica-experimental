@@ -1,47 +1,27 @@
-function Contar() {
-let numeros = [6, 10];
+function buscarPalabra(texto, palabra) {
+    let match = 0; 
 
-for (let i = 0; i < numeros.length; i++) {
-    let num = numeros[i];
-    let divisores = "";
+    for (let i = 0; i < texto.length; i++) {
 
-    for (let n = 1; n <= num; n++) {
-        if (num % n === 0) {
-           
-            if (divisores === "") {
-                divisores += n;
-            } else {
-                divisores += ", " + n;
+        if (texto[i] === palabra[match]) {
+            match++; 
+
+            if (match === palabra.length) {
+                return true;
             }
+        } else {
+            match = 0;
         }
     }
 
-    alert(`Divisores de ${num}: ${divisores}`);
- }
+    return false;
 }
-Contar()
-//Algoritmo Divisores_Arreglo
-//    Definir numeros Como Arreglo de Entero
-//    Definir i, j, num Como Entero
- //   Definir divisores, cadena Como Cadena
 
- //   numeros ← [6, 10]  
+let texto = "Me gusta programar en JavaScript";
+let palabra = "programar";
 
- //   Para i ← 1 Hasta Longitud(numeros) Hacer
- //       num ← numeros[i]
- //       divisores ← ""
-        
- //       Para j ← 1 Hasta num Hacer
- //           Si num MOD j = 0 Entonces
-               
-  //              Si divisores = "" Entonces
- //                   divisores ← j
- //               Sino
- //                   divisores ← divisores + ", " + j
-  //              FinSi
-  //          FinSi
-  //      FinPara
-
-  //      Escribir "Divisores de ", num, ": ", divisores
- //   FinPara
-//FinAlgoritmo
+if (buscarPalabra(texto, palabra)) {
+    console.log("La palabra '" + palabra + "' sí se encuentra en el texto.");
+} else {
+    console.log("La palabra '" + palabra + "' NO se encuentra.");
+}
