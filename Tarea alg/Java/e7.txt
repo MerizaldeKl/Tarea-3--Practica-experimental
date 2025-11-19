@@ -1,21 +1,26 @@
-let texto = "hola Mundo bonito";
-let contador = 0;
-let enPalabra = false;
+function contarPalabrasMinuscula(texto) {
+    let contador = 0;
+    let nuevaPalabra = true;
 
-for (let i = 0; i < texto.length; i++) {
-    let c = texto[i];
+    for (let i = 0; i < texto.length; i++) {
+        let c = texto[i];
 
-    if (c !== " " && enPalabra === false) {
-        enPalabra = true;
+        if (c === " " || c === "\n") {
+            nuevaPalabra = true; 
+        } else {
+            if (nuevaPalabra === true) {
 
-        if (c >= 'a' && c <= 'z') {
-            contador++;
+                if (c >= 'a' && c <= 'z') {
+                    contador++;
+                }
+
+                nuevaPalabra = false; // ya no es inicio
+            }
         }
     }
 
-    if (c === " ") {
-        enPalabra = false;
-    }
+    return contador;
 }
 
-console.log("Palabras con minúscula inicial: " + contador);
+let texto = "hola Mundo bonito";
+console.log("Palabras con minúscula inicial: " + contarPalabrasMinuscula(texto));
