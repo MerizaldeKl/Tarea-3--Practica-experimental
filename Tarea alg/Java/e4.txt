@@ -1,38 +1,40 @@
-function Contar() {
-  let apellido1 = prompt("Ingrese el primer apellido:");
-  let apellido2 = prompt("Ingrese el segundo apellido:");
+function contarConsonantes(texto) {
+    let vocales = [];
 
-  if (!apellido1 || !apellido2) {
-    alert("No ingresaste uno o ambos apellidos.");
-    return;
-  }
+    vocales.push("a");
+    vocales.push("e");
+    vocales.push("i");
+    vocales.push("o");
+    vocales.push("u");
 
-  if (apellido1.length > apellido2.length) {
-    alert(`El apellido '${apellido1}' tiene más letras.`);
-  } else if (apellido2.length > apellido1.length) {
-    alert(`El apellido '${apellido2}' tiene más letras.`);
-  } else {
-    alert(`Los apellidos '${apellido1}' y '${apellido2}' tienen la misma cantidad de letras.`);
-  }
+    vocales.push("A");
+    vocales.push("E");
+    vocales.push("I");
+    vocales.push("O");
+    vocales.push("U");
+
+    let contador = 0;
+
+    for (let i = 0; i < texto.length; i++) {
+        let c = texto[i];
+        let esVocal = false;
+
+        for (let j = 0; j < vocales.length; j++) {
+            if (c === vocales[j]) {
+                esVocal = true;
+            }
+        }
+
+        let esLetraMinus = (c >= "a" && c <= "z");
+        let esLetraMayus = (c >= "A" && c <= "Z");
+
+        if ((esLetraMinus || esLetraMayus) && !esVocal) {
+            contador++;
+        }
+    }
+
+    return contador;
 }
-Contar()
-//Inicio
-//    Mostrar "Ingrese el primer apellido:"
-//    Leer apellido1
 
-//    Mostrar "Ingrese el segundo apellido:"
- //   Leer apellido2
-
-//    Si apellido1 está vacío O apellido2 está vacío Entonces
-//        Mostrar "No ingresaste uno o ambos apellidos."
-//        Fin   // Equivalente a 'return' en JS
-//    FinSi
-
- //   Si longitud(apellido1) > longitud(apellido2) Entonces
- //       Mostrar "El apellido '", apellido1, "' tiene más letras."
-//    SinoSi longitud(apellido2) > longitud(apellido1) Entonces
-//        Mostrar "El apellido '", apellido2, "' tiene más letras."
-//    Sino
-//        Mostrar "Los apellidos '", apellido1, "' y '", apellido2, "' tienen la misma cantidad de letras."
-//    FinSi
-//Fin
+let texto = "Hola";
+console.log("Cantidad de consonantes:", contarConsonantes(texto));
