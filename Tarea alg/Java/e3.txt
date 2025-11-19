@@ -1,0 +1,23 @@
+function Contar() {
+let texto = prompt("Ingrese un texto:");
+  let textoInvertido = "";
+
+  for (let i = texto.length - 1; i >= 0; i--) {
+    textoInvertido += texto[i];
+  }
+
+  alert(`El texto invertido es: ${textoInvertido.toLowerCase()}`);
+}
+Contar()
+//Inicio
+ //   Mostrar "Ingrese un texto:"
+//    Leer texto
+
+//    textoInvertido ← ""  
+
+//    Para i desde longitud(texto) - 1 hasta 0 hacer
+//        textoInvertido ← textoInvertido + texto[i]  
+//    FinPara
+
+//    Mostrar "El texto invertido es: ", textoInvertido
+//Fin

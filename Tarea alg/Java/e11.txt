@@ -1,0 +1,47 @@
+function Contar() {
+let numeros = [6, 10];
+
+for (let i = 0; i < numeros.length; i++) {
+    let num = numeros[i];
+    let divisores = "";
+
+    for (let n = 1; n <= num; n++) {
+        if (num % n === 0) {
+           
+            if (divisores === "") {
+                divisores += n;
+            } else {
+                divisores += ", " + n;
+            }
+        }
+    }
+
+    alert(`Divisores de ${num}: ${divisores}`);
+ }
+}
+Contar()
+//Algoritmo Divisores_Arreglo
+//    Definir numeros Como Arreglo de Entero
+//    Definir i, j, num Como Entero
+ //   Definir divisores, cadena Como Cadena
+
+ //   numeros ← [6, 10]  
+
+ //   Para i ← 1 Hasta Longitud(numeros) Hacer
+ //       num ← numeros[i]
+ //       divisores ← ""
+        
+ //       Para j ← 1 Hasta num Hacer
+ //           Si num MOD j = 0 Entonces
+               
+  //              Si divisores = "" Entonces
+ //                   divisores ← j
+ //               Sino
+ //                   divisores ← divisores + ", " + j
+  //              FinSi
+  //          FinSi
+  //      FinPara
+
+  //      Escribir "Divisores de ", num, ": ", divisores
+ //   FinPara
+//FinAlgoritmo

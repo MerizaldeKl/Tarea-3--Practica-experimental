@@ -1,0 +1,38 @@
+function Contar() {
+  let apellido1 = prompt("Ingrese el primer apellido:");
+  let apellido2 = prompt("Ingrese el segundo apellido:");
+
+  if (!apellido1 || !apellido2) {
+    alert("No ingresaste uno o ambos apellidos.");
+    return;
+  }
+
+  if (apellido1.length > apellido2.length) {
+    alert(`El apellido '${apellido1}' tiene más letras.`);
+  } else if (apellido2.length > apellido1.length) {
+    alert(`El apellido '${apellido2}' tiene más letras.`);
+  } else {
+    alert(`Los apellidos '${apellido1}' y '${apellido2}' tienen la misma cantidad de letras.`);
+  }
+}
+Contar()
+//Inicio
+//    Mostrar "Ingrese el primer apellido:"
+//    Leer apellido1
+
+//    Mostrar "Ingrese el segundo apellido:"
+ //   Leer apellido2
+
+//    Si apellido1 está vacío O apellido2 está vacío Entonces
+//        Mostrar "No ingresaste uno o ambos apellidos."
+//        Fin   // Equivalente a 'return' en JS
+//    FinSi
+
+ //   Si longitud(apellido1) > longitud(apellido2) Entonces
+ //       Mostrar "El apellido '", apellido1, "' tiene más letras."
+//    SinoSi longitud(apellido2) > longitud(apellido1) Entonces
+//        Mostrar "El apellido '", apellido2, "' tiene más letras."
+//    Sino
+//        Mostrar "Los apellidos '", apellido1, "' y '", apellido2, "' tienen la misma cantidad de letras."
+//    FinSi
+//Fin

@@ -1,0 +1,66 @@
+function Contar() {
+let frase1 = prompt("Ingrese la primera frase:");
+let frase2 = prompt("Ingrese la segunda frase:");
+if(!frase1 || !frase2) {
+    alert(`No ingresaste la frase 1 o 2.`);
+    return;
+}
+
+let contador1 = 0;
+let contador2 = 0;
+
+for (let i = 0; i < frase1.length; i++) {
+    if (frase1[i] != " ") {
+        contador1++;
+    }
+}
+
+for (let i = 0; i < frase2.length; i++) {
+    if (frase2[i] != " ") {
+        contador2++;
+    }
+}
+
+if (contador1 > contador2) {
+    alert(`La frase '${frase1}' tiene más caracteres.`);
+} else if (contador2 > contador1) {
+    alert(`La frase '${frase2}' tiene más caracteres.`);
+} else {
+    alert("Ambas frases tienen la misma cantidad de caracteres.");
+}
+}
+Contar();
+//Algoritmo Frase_Mas_Larga_Sin_Espacios
+//    Definir frase1, frase2 Como Cadena
+ //   Definir contador1, contador2, i Como Entero
+
+ //   Escribir "Ingrese la primera frase:"
+ //   Leer frase1
+//    Escribir "Ingrese la segunda frase:"
+//    Leer frase2
+
+//    contador1 ← 0
+//    contador2 ← 0
+
+//    Para i ← 1 Hasta Longitud(frase1) Hacer
+//        Si Subcadena(frase1, i, 1) ≠ " " Entonces
+//            contador1 ← contador1 + 1
+//        FinSi
+//    FinPara
+
+ //   Para i ← 1 Hasta Longitud(frase2) Hacer
+ //       Si Subcadena(frase2, i, 1) ≠ " " Entonces
+ //           contador2 ← contador2 + 1
+ //       FinSi
+//    FinPara
+
+//    Si contador1 > contador2 Entonces
+//        Escribir "La frase '", frase1, "' tiene más caracteres (sin contar espacios)."
+//    Sino
+//        Si contador2 > contador1 Entonces
+ //           Escribir "La frase '", frase2, "' tiene más caracteres (sin contar espacios)."
+ //       Sino
+ //           Escribir "Ambas frases tienen la misma cantidad de caracteres (sin contar espacios)."
+ //       FinSi
+ //   FinSi
+//FinAlgoritmo

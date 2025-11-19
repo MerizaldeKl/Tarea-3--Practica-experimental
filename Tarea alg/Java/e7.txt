@@ -1,0 +1,51 @@
+function Contar() {
+  
+    let palabra = prompt("Ingrese una palabra:");
+    if (!palabra) {
+        alert("No ingresó ninguna palabra.");
+        return;
+    }
+
+    let esPalindromo = true;
+    palabra = palabra.toLowerCase(); // ignorar mayúsculas
+
+    for (let i = 0; i < palabra.length / 2; i++) {
+        if (palabra[i] !== palabra[palabra.length - 1 - i]) {
+            esPalindromo = false;
+            break;
+        }
+    }
+
+    if (esPalindromo) {
+        alert(`La palabra '${palabra}' es un palíndromo.`);
+    } else {
+        alert(`La palabra '${palabra}' no es un palíndromo.`);
+    }
+}
+
+Contar();
+//Algoritmo Palabra_Palindroma
+//    Definir palabra Como Cadena
+//    Definir esPalindromo Como Logico
+//    Definir i Como Entero
+
+//    Escribir "Ingrese una palabra:"
+//Leer palabra
+
+//    palabra ← Minusculas(palabra)
+ //   esPalindromo ← Verdadero
+
+ //   Para i ← 1 Hasta Longitud(palabra) / 2 Hacer
+ //       Si Subcadena(palabra, i, 1) ≠ Subcadena(palabra, Longitud(palabra) - i + 1, 1) Entonces
+ //           esPalindromo ← Falso
+//            SalirDelPara
+//        FinSi
+ //   FinPara
+
+ //   Si esPalindromo = Verdadero Entonces
+ //       Escribir "La palabra '", palabra, "' es un palíndromo."
+ //   Sino
+ //       Escribir "La palabra '", palabra, "' no es un palíndromo."
+ //   FinSi
+//FinAlgoritmo
+

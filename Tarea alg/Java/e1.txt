@@ -1,0 +1,22 @@
+function Contar() {
+    let palabra = prompt("Ingrese la palabra");
+    let cantidad = 0;
+    if(palabra) {
+        cantidad = palabra.length;
+    alert(`La palabra tiene ${cantidad} caracteres`);
+    } else {
+        alert(`No ingreso palabras`)
+    }
+}
+Contar()
+//Inicio
+//    Mostrar "Ingrese la palabra"
+//    Leer palabra
+
+//    Si palabra no está vacía Entonces
+//       cantidad ← longitud(palabra)
+//        Mostrar "La palabra tiene", cantidad, "caracteres."
+//    Sino
+//        Mostrar "No ingresó ninguna palabra."
+//    FinSi
+//Fin

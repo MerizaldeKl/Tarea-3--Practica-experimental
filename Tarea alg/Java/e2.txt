@@ -1,0 +1,36 @@
+function Contar() {
+  let texto = prompt("Ingrese una frase:");
+  let letra = prompt("Ingrese la letra que desea contar:");
+
+  let contador = 0;
+
+  for (let i = 0; i < texto.length; i++) {
+    if(texto[i].toLowerCase() === letra.toLowerCase()) {
+      contador++;
+    } 
+  }
+   alert(`La letra ${letra} aparece ${contador} veces.`);
+}
+Contar()
+//Inicio
+//    Mostrar "Ingrese una frase:"
+//    Leer texto
+
+//    Mostrar "Ingrese la letra que desea contar:"
+//    Leer letra
+
+ //   Si texto está vacío O letra está vacía Entonces
+//        Mostrar "No ingresaste texto o letra."
+//        Fin
+//    FinSi
+
+ //   contador ← 0
+
+//    Para i desde 0 hasta longitud(texto) - 1 Hacer
+//        Si convertir_a_minuscula(texto[i]) = convertir_a_minuscula(letra) Entonces
+//            contador ← contador + 1
+//        FinSi
+//    FinPara
+
+//    Mostrar "La letra ", letra, " aparece ", contador, " veces."
+//Fin

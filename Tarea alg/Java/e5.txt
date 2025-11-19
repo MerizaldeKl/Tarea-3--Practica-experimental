@@ -1,0 +1,38 @@
+function Contar() {
+  let nombre = prompt("Ingrese su nombre completo:");
+  if (!nombre) {
+    alert("No ingresaste un nombre.");
+    return;
+  }
+
+  let iniciales = "";  
+  
+  for (let i = 0; i < nombre.length; i++) {
+  
+    if (i === 0 || nombre[i - 1] === " ") {
+      iniciales += nombre[i].toUpperCase() + ".";
+    }
+  }
+
+  alert(`Las iniciales son: ${iniciales}`);
+}
+Contar()
+//Inicio
+ //   Mostrar "Ingrese su nombre completo:"
+ //   Leer nombre
+
+ //   Si nombre está vacío Entonces
+ //       Mostrar "No ingresaste un nombre."
+ //       Fin
+ //   FinSi
+
+ //   iniciales ← ""  
+
+ //   Para i desde 0 hasta longitud(nombre) - 1 Hacer
+//        Si i = 0 O nombre[i - 1] = " " Entonces
+//            iniciales ← iniciales + convertir_a_mayuscula(nombre[i]) + "."
+//        FinSi
+//    FinPara
+
+ //   Mostrar "Las iniciales son: ", iniciales
+//Fin
